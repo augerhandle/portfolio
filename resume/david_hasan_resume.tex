@@ -1,6 +1,8 @@
 \documentclass[11pt,oneside]{article}
 \usepackage{geometry}
 \usepackage[T1]{fontenc}
+\usepackage{xifthen}
+
 
 \pagestyle{empty}
 \geometry{letterpaper,tmargin=1in,bmargin=1in,lmargin=1in,rmargin=1in,headheight=0in,headsep=0in,footskip=.3in}
@@ -31,16 +33,15 @@
 	\begin{center}
 		\Huge\name
 	\end{center}
-
-	\vspace{-8pt} \rule{\textwidth}{0.25pt}
+	\vspace{-8pt} \rule{\textwidth}{1pt}
 	\vspace{-8pt}
 	{\small \textit{\addr} \hfill \texttt{\email}}\\
 	{\vskip -6pt}{\small \textit{\phone} \hfill \texttt{\web}}
-	{\vskip -6pt}\rule{\textwidth}{0.5pt}
+	{\vskip -6pt}\rule{\textwidth}{1pt}
 }
 
 \newcommand{\resabstract}[1]{
-	\begin{changemargin}{1in}{1in}
+	\begin{changemargin}{.45in}{.45in}
 		\textit{#1}
 	\end{changemargin}
 }
@@ -74,8 +75,8 @@
 \newcommand{\resbigitem}[3]{
 	\vspace{-5pt}
 	\item
-	\textbf{#1}---#2 \\
-	\textit{#3}
+	\textbf{#1}---#2 
+	\textit{(#3)}
 }
 
 % This is a list that comes with a resbigitem
@@ -95,6 +96,13 @@
 }{
 	\end{itemize}
 }
+\newenvironment{reslistx}[2]{
+	\resitem{\textbf{#1} --- #2}
+	\vspace{-5pt}
+	\begin{itemize}
+}{
+	\end{itemize}
+}
 
 
 
@@ -108,84 +116,104 @@
 \resheader
 
 \resabstract{%
-	I am an aerospace engineer and software developer making
+	I am an engineer and software developer making
 	a transition to teaching.
 	I have a solid, hands-on understanding of mathematics
-	and physics, years of software development experience,
+	and physics, years of aerospace engineering and software development experience,
+	some teaching experience,
 	and stories that will help make math real for my students.
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%
-\begin{ressection}{Education}
+\begin{ressection}{Education and Certifications}
 
-	\begin{ressubsec}{Brigham Young University}{Provo, UT}{Majoring in Computer Science and in Mathematics}
-		\ressubitem{GPA: 3.77 (overall), 3.77 (CS major), 3.90 (Math major)}
-		\ressubitem{Projected Graduation Date: May, 2006}
-	\end{ressubsec}
+	\begin{reslistx}{Region 13 Educational Service Center}{Austin, TX}
+		\ressubitem{Intern Certificate: May, 2018}
+		\ressubitem{Projected Completion Date: May, 2019}
+	\end{reslistx}
 
+	\begin{reslistx}{TEA Texas Educator Certification}{Austin, TX}
+		\ressubitem{Test 243 Physics/Math 7--12 --- passed: May, 2018}
+	\end{reslistx}
+
+	\begin{reslistx}{The University of Texas}{Austin, TX}
+		\ressubitem{PhD candidate: Aerospace Engineering --- all but dissertation, 1992}
+		\ressubitem{MS: Aerospace Engineering, 1988}
+	\end{reslistx}
+
+	\begin{reslistx}{The University of Illinois}{Urbana, IL}
+		\ressubitem{BS: Aeronatical and Astronautical Engineering --- graduated with \textit{highest honors}, 1982}
+		\ressubitem{AB: Political Science --- graduated \textit{magna cum laude}, 1982}
+	\end{reslistx}
+
+\end{ressection}
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ressection}{Teaching Experience}
+	\ressubitem{Roth}
+	\ressubitem{student teaching}
+	\ressubitem{ABC mentoring}
+	\ressubitem{ACC}
+	\ressubitem{PVAM}
 \end{ressection}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%
-\begin{ressection}{Experience}
+\begin{ressection}{Previous Employment}
 
-	\begin{ressubsec}{BYU Computer Science Department}{Provo, UT}{System Programmer: June 2003--present}
-		\ressubitem{Manage 200 Linux and 150 Windows 2000 lab workstations.}
-		\ressubitem{Maintain department Linux servers and document their configuration.}
-		\ressubitem{Develop tools and scripts to improve reliability and functionality of the network.}
-		\ressubitem{Assist users with problems and write tutorials and documentation.}
+	\begin{ressubsec}{The Advisory Board Company}{Austin, TX}{2012--2018}
+		\ressubitem{Architect --- Led system engineering for an enterprise analytics platform.}
+		\ressubitem{Development Manager --- Led a big data software team. }
+		\ressubitem{Principal Software Engineer --- Designed and built health care software.}
 	\end{ressubsec}
 
-	\begin{ressubsec}{Argus Systems Group, Inc.}{Champaign, IL}{System Administrator: March, 1997--August, 2000}
-		\ressubitem{Configured servers, maintained inventory, and managed tape backup system.}
-		\ressubitem{Prepared all product distribution media (including bootable CDs).}
+	\begin{ressubsec}{L-3 Stratis}{Houston, TX}{2006--2012}
+		\ressubitem{Model and Simulation Architect --- Led systems engineering for a multi-team/multi-vendor spacecraft training simulator.}
+	\end{ressubsec}
+
+	\begin{ressubsec}{Sun Microsystems}{Austin, TX}{2003--2006}
+		\ressubitem{Software Development Team Lead --- Led small, distributed teams building cloud and reliability automation tools.}
+	\end{ressubsec}
+
+	\begin{ressubsec}{Titan Systems Corporation}{Houston, TX}{2001--2003}
+		\ressubitem{Systems Engineer --- Designed and built software for GPS-based autonomous navigation and grid computing.}
+	\end{ressubsec}
+
+	\begin{ressubsec}{The Adrenaline Group}{Austin, TX}{2000--2001}
+		\ressubitem{Lead Software Developer --- Technical lead of the small Austin software development team.}
+	\end{ressubsec}
+
+	\begin{ressubsec}{LinCom Corporation}{Houston, TX}{1993--2000}
+		\ressubitem{Senior Engineer --- Led a team of software developers 
+		applying new software technologies into the NASA Mission Control Center. 
+		Designed and built real-time systems. Provided project management support to NASA. }
 	\end{ressubsec}
 
 \end{ressection}
 
-
-%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{ressection}{Skills}
-
-	\resitem{\textbf{Operating Systems:} Linux (Gentoo, Red Hat, and Debian), Mac OS 9 and X, UNIX (several variants), Windows 98/2000/XP}
-
-	\begin{reslist}{Computer Languages:}
-
-		\ressubitem{Proficient in C, C++, HTML, Java, \LaTeX, PHP, UNIX Shells}
-
-		\ressubitem{Familiar with Perl, SQL}
-
-	\end{reslist}
-
-	\begin{reslist}{Tools and Systems:}
-
-		\ressubitem{Proficient in Apache, BIND, CVS/RCS, Make, GnuPG, SSHD, VI}
-
-		\ressubitem{Familiar with Kerberos, MySQL, NFS, OpenLDAP, OpenSSL, Postfix, Samba}
-
-	\end{reslist}
-
-
-\end{ressection}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%
 \begin{ressection}{Achievements and Activities}
 
-	\resitem{Served a voluntary two-year mission in Serbia and Bulgaria (2001--2003).  Speak fluent Serbian and basic Bulgarian.}
-
-	\resitem{As a member and president of the BYU Unix Users Group, assist new Linux users and participate in presentations and discussions on advanced topics (2003--present).}
-
-	\resitem{Manage a heterogeneous home network and family server (1996--present).}
-
-	\resitem{Received a National Merit Scholarship.}
-
-	\resitem{Co-authored ``Interacting Quantitative Trait Loci Control Phenotypic Variation in Murine Estradiol-Regulated Responses,'' \textit{Endocrinology} 140 no. 2 (1999).}
-
-	\resitem{Awarded Eagle Scout Rank, Boy Scouts of America (1996).}
-
+	\resitem{$\Phi B K$ -- liberal arts honorary, 1982}
+	\resitem{$\Sigma T \Gamma$ -- aerospace honorary, 1983}
+	\resitem{ISP awards}
+	\resitem{NASA Research Fellowship, 1992}
+	\resitem{Advisory Board Company Mentor of the Year, 2015}
+	\resitem{Neighborhood Plan xxxxxxxx}
 
 \end{ressection}
 
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ressection}{References}
+	\resitem{Eric Roth --- xxx}
+	\resitem{Kyle McVay --- xxx}
+	\resitem{Ranga}
+	\resitem{Harish Raja --- xxx}
+\end{ressection}
 
 \end{document}
