@@ -1,0 +1,104 @@
+\documentclass[12pt]{letter}
+
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \newcommand{\principalname}{Dr. ZZZ}
+  \newcommand{\schoolname}{ZZZ High School}
+  \newcommand{\schoolstreetaddress}{ZZZ}
+  \newcommand{\schoolcitystate}{ZZZ, TX}
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+  \usepackage[T1]{fontenc}
+  \usepackage{geometry}
+  \usepackage{hyperref}
+  \usepackage{xcolor}
+  \hypersetup{
+      colorlinks,
+      linkcolor={red!50!black},
+      citecolor={blue!50!black},
+      urlcolor={blue!80!black}
+  }
+
+  \geometry{letterpaper,tmargin=1.5in,bmargin=1in,lmargin=1.5in,rmargin=1.5in}
+
+  %remove leading whitespace at the top of the first page
+  \makeatletter
+  \let\@texttop\relax
+  \makeatother
+
+  % move the date to the left side of the page
+  \makeatletter
+  \renewcommand*{\opening}[1]{\ifx\@empty\fromaddress
+    \thispagestyle{firstpage}%
+      {\raggedleft\@date\par}%
+    \else  % home address
+      \thispagestyle{empty}%
+      {\raggedleft\begin{tabular}{l@{}}\ignorespaces
+        \fromaddress \\*[2\parskip]%
+        \end{tabular}\par
+       \raggedright\@date\par}%
+    \fi
+    \vspace{2\parskip}%
+    {\raggedright \toname \\ \toaddress \par}%
+    \vspace{2\parskip}%
+    #1\par\nobreak}
+  \makeatother
+
+
+  \signature{David A. Hasan}
+  \address{%
+    {\footnotesize\textsc{6103 Sun Vista}}\\
+    {\footnotesize\textsc{Austin, TX 78749}}\\
+    {\footnotesize{(512) 945-3271}}\\
+    {\footnotesize\ttfamily \href{mailto:david@augerhandle.net}{david@augerhandle.net}}\\
+    {\footnotesize\ttfamily \href{https://augerhandle.github.io/portfolio}{augerhandle.github.io/portfolio}}
+  }
+
+  \begin{document}
+  \fontfamily{ppl}\selectfont
+  \begin{letter}{\principalname\\ \schoolname \\ \schoolstreetaddress\\ \schoolcitystate}
+  \opening{\principalname,}
+
+  I am applying for a \textit{math teaching position} at \schoolname.
+  My background is nontraditional.
+  I am an aerospace engineer and software developer making a long--contemplated transition to teaching.
+
+  I am currently enrolled in the
+  \textit{Region 13 Educator Certification Program}.
+  I have completed student teaching at AISD Akins High School
+  and have passed the
+  \textit{TExES ExCET Physics/Math 7--12} content exam.
+  In addition, I taught several semesters of \textit{College Algebra} and \textit{Dynamics} 
+  at Austin Community College many years ago,
+  and for several years I have volunteered at AISD Clayton Elemetary
+  working on science, math, software and poetry.
+
+  Although I am relatively new to teaching,
+  I believe that I will be an asset to your faculty for (at least) the following reasons.
+  \begin{itemize}
+    \item Due to my background in engineering and software development,
+    I am extremely comfortable with math, physics and computer science.
+    \item I have STEM career experiences and insights that I plan to use 
+    to enrich my lessons and keep my students interested.
+    \item The Region--13 certification program that I am enrolled in
+    is aggressively focused on creating engaging lessons and (most importantly)
+    managing the classroom by explicitly defining expectations and teaching
+    class procedures and routines.
+  \end{itemize}
+    
+    I have attached a resume.
+    It summarizes my qualifications in more detail, including my
+    education, certification, work history and references.
+
+    More information about me is available 
+    at the URL at the top of this letter. 
+    That website hosts my 
+    \textit{new teacher portfolio} where I am collecting my thoughts, initial plans, and 
+    other details related to how I plan to hit the ground running in the fall.
+
+    Thank you for your consideration.
+    I look forward to hearing from you.
+
+  \closing{Sincerely,}
+  \encl{resume}
+  \end{letter}
+  \end{document}
